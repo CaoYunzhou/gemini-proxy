@@ -16,13 +16,27 @@
 ### 官方使用示例
 
 ```shell
-curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro?key=$API_KEY
+curl https://generativelanguage.googleapis.com/v1beta/models?key=$API_KEY
 ```
 
 ### Vercel反代后的使用示例
 
 ```shell
-curl https://gemini.aivvm.com/v1beta/models/gemini-pro?key=$API_KEY
+curl https://gemini.aivvm.com/v1beta/models?key=$API_KEY
+```
+
+```shell
+curl https://gemini.aivvm.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+    -H 'Content-Type: application/json' \
+    -X POST \
+    -d '{
+      "contents": [
+        {"role":"user",
+         "parts":[{
+           "text": "鲁迅为什么打周树人？"}]},
+      ]
+    }'
+
 ```
 
 ### 沉浸式翻译配置如下
